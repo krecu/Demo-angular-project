@@ -1,2 +1,4 @@
-<canvas id="main" ng-click="handleClick($event)"></canvas>
-<div ng-repeat="point in points" point-h-t-m-l="point"></div>
+<main id="main" ng-mousemove="showPoints($event)" ng-mouseleave="hidePoints()">
+    <img id="shape" src="/themes/DemoApp/images/demo.jpg" ng-click="createPoint($event)"></img>
+    <div ng-if="display" ng-repeat="point in points" point-h-t-m-l="point"></div>
+</main>

@@ -1,23 +1,28 @@
 html, body {
   width: 100%;
-  height: 100%;
+  height:100%;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 img {
-  outline: none; }
+  outline: none;
+}
 
 #main {
   width: 1200px;
   height: auto;
   padding: 0;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .point {
   cursor: pointer;
   position: absolute;
   background: #D2413A;
-  border-radius: 15px; }
+  border-radius: 15px;
+}
+
 
 .point .point-delete {
   display: none;
@@ -26,13 +31,17 @@ img {
   margin: 0;
   position: absolute;
   top: -25px;
-  right: -25px; }
+  right: -25px;
+}
 
 .point:hover .wrap {
-  display: block; }
+  display: block;
+}
 
 .point:hover .point-delete {
-  display: block; }
+  display: block;
+}
+
 
 .point .wrap {
   display: none;
@@ -40,65 +49,74 @@ img {
   height: auto;
   border-radius: 5px;
   position: absolute;
-  top: 0px; }
+  top: 0px;
+}
 
 .point .dialog {
   background: white;
-  -webkit-box-shadow: 0px 0px 5px 1px rgba(173, 173, 173, 0.73);
-  -moz-box-shadow: 0px 0px 5px 1px rgba(173, 173, 173, 0.73);
-  box-shadow: 0px 0px 5px 1px rgba(173, 173, 173, 0.73);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(173,173,173,0.73);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(173,173,173,0.73);
+  box-shadow: 0px 0px 5px 1px rgba(173,173,173,0.73);
   box-sizing: border-box;
   width: 100%;
   height: auto;
   padding: 10px;
   border-radius: 5px;
   position: relative;
-  margin-top: 50px; }
+  margin-top: 50px;
+}
 
 /* Make an arrow */
-.point .arrow {
+.point .arrow{
   position: absolute;
-  top: 0px;
+  top:0px;
   left: 10px;
   background-color: white;
-  -webkit-box-shadow: -2px -2px 5px -1px rgba(173, 173, 173, 0.73);
-  -moz-box-shadow: -2px -2px 5px -1px rgba(173, 173, 173, 0.73);
-  box-shadow: -2px -2px 5px -1px rgba(173, 173, 173, 0.73);
+  -webkit-box-shadow: -2px -2px 5px -1px rgba(173,173,173,0.73);
+  -moz-box-shadow: -2px -2px 5px -1px rgba(173,173,173,0.73);
+  box-shadow: -2px -2px 5px -1px rgba(173,173,173,0.73);
   width: 10px;
   height: 10px;
-  -webkit-transform: translateY(-5px) rotate(45deg); }
+  -webkit-transform: translateY(-5px) rotate(45deg);
+}
 
 .form button {
   width: 100%;
   padding: 0;
-  margin: 0; }
-
+  margin: 0;
+}
 .form textarea {
   padding: 10px;
   margin-bottom: 10px;
   border: 1px #ccc dashed;
   min-width: 100%;
   box-sizing: border-box;
-  outline: none; }
+  outline: none;
+}
 
 .comments .info {
   overflow: hidden;
-  white-space: nowrap; }
+  white-space: nowrap;
+}
 
 .comments .info .op {
-  float: right; }
+  float: right;
+}
 
 .comments .info .op button {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 .comments .edit {
-  position: relative; }
+  position: relative;
+}
 
 .comments .edit button {
   position: absolute;
   top: 10px;
-  right: 0; }
+  right: 0;
+}
 
 .comments .edit textarea {
   border: 1px #ccc dashed;
@@ -106,7 +124,8 @@ img {
   padding: 5px;
   box-sizing: border-box;
   width: 100%;
-  font-size: 12px; }
+  font-size: 12px;
+}
 
 .comments .user {
   margin: 15px 0 0;
@@ -118,7 +137,8 @@ img {
   line-height: 1;
   font-size: 10px;
   color: #fff;
-  border-radius: 5px; }
+  border-radius: 5px;
+}
 
 .comments .user .time {
   margin-left: 10px;
@@ -126,13 +146,13 @@ img {
   position: absolute;
   color: #000;
   top: 0;
-  left: 100%; }
+  left: 100%;
+}
 
 .comments .text {
   word-wrap: break-word;
   display: block;
   padding: 10px 0;
   line-height: normal;
-  font-size: 12px; }
-
-/*# sourceMappingURL=main.css.map */
+  font-size: 12px;
+}

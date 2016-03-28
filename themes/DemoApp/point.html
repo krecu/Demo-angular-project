@@ -1,4 +1,9 @@
-<div class="point" style="top: {{point.y - point.r/2}}px; left: {{point.x - point.r/2}}px; width: {{point.r}}px; height: {{point.r}}px;" ng-mouseover="point.show = 1" ng-mouseleave="point.show = 0">
+<div class="point" style="top: {{point.y - point.r/2}}px; left: {{point.x - point.r/2}}px; width: {{point.r}}px; height: {{point.r}}px;">
+
+    <md-button class="md-icon-button point-delete" ng-click="removePoint(point)">
+        <md-icon md-menu-origin>delete</md-icon>
+    </md-button>
+
     <div class="wrap">
         <div class="dialog">
             <div class="arrow"></div>
@@ -8,7 +13,17 @@
                     <md-list-item class="md-3-line" ng-repeat="comment in point.comments">
                         <img ng-src="https://api.adorable.io/avatars/40/{{$index}}@adorable.io.png" class="md-avatar" alt="{{comment.user}}">
                         <div class="md-list-item-text">
-                            <div class="info"><span class="user">{{comment.user}} <sup class="time">{{comment.time}}</sup></span></div>
+                            <div class="info">
+                                <span class="user">{{comment.user}} <sup class="time">{{comment.time}}</sup></span>
+                                <div class="op">
+                                    <md-button class="md-icon-button md-accent" ng-click="point.editComment(comment)">
+                                        <md-icon >mode_edit</md-icon>
+                                    </md-button>
+                                    <md-button class="md-icon-button md-accent" ng-click="preRemoveComment(comment)">
+                                        <md-icon>delete</md-icon>
+                                    </md-button>
+                                </div>
+                            </div>
                             <div class="edit" ng-if="comment.status == 'edit'">
                                 <textarea ng-model="comment.text" placeholder="Write comment or @mention..."></textarea>
                                 <md-button  class="md-icon-button md-accent" ng-click="point.saveComment(comment)">
@@ -17,28 +32,6 @@
                             </div>
                             <span ng-if="comment.status !== 'edit'" class="text">{{comment.text}}</span>
                         </div>
-
-
-                        <md-menu>
-                            <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
-                                <md-icon md-menu-origin>more_vert</md-icon>
-                            </md-button>
-                            <md-menu-content width="4">
-                                <md-menu-item>
-                                    <md-button ng-click="point.editComment(comment)">
-                                        <md-icon >mode_edit</md-icon>
-                                        Edit
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-divider></md-menu-divider>
-                                <md-menu-item>
-                                    <md-button ng-click="preRemoveComment(comment)">
-                                        <md-icon>delete</md-icon>
-                                        Delete
-                                    </md-button>
-                                </md-menu-item>
-                            </md-menu-content>
-                        </md-menu>
 
                         <md-divider md-inset></md-divider>
                     </md-list-item>
