@@ -7,3 +7,5 @@ npm i &&  \
 npm i -g grunt-cli
 grunt
 ```
+
+Go to http://localhost:9000
