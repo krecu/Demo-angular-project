@@ -5,5 +5,5 @@ myApp
 			.state('home', {
 				url: '/',
 				templateUrl: '/themes/DemoApp/home.html'
-			})
+			});
 	});

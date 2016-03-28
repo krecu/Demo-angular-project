@@ -48,7 +48,7 @@ myApp
              */
             addComment: function (text) {
                 var c = new Comment(text, Math.floor(Date.now() / 1000), "Who i am...");
-                this.comments.push(c)
+                this.comments.push(c);
             },
 
             /**
@@ -57,8 +57,8 @@ myApp
              */
             removeComment: function (comment) {
                 this.comments = this.comments.filter(function (c) {
-                    return comment.id != c.id
-                })
+                    return comment.id != c.id;
+                });
             },
 
             /**
@@ -67,8 +67,8 @@ myApp
              */
             editComment: function (comment) {
                 this.comments.filter(function (c) {
-                    return comment.id == c.id
-                })[0].status = "edit"
+                    return comment.id == c.id;
+                })[0].status = "edit";
             },
 
             /**
@@ -77,8 +77,8 @@ myApp
              */
             saveComment: function (comment) {
                 this.comments.filter(function (c) {
-                    return comment.id == c.id
-                })[0].status = "published"
+                    return comment.id == c.id;
+                })[0].status = "published";
             }
         };
 

@@ -36,7 +36,7 @@ myApp
         $scope.removePoint = function(point) {
             $scope.points = $scope.points.filter(function(p){
                 return p.id !== point.id;
-            })
+            });
         };
 
         /**
@@ -68,6 +68,6 @@ myApp
          */
         $scope.hidePoints = function(){
             $scope.display = false;
-        }
+        };
 
     }]);

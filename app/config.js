@@ -10,7 +10,7 @@ var configData = {
             'THEME': 'DemoApp'
         }
     }
-}
+};
 
 var configModule = angular.module('config', []);
 angular.forEach(configData, function(key, value) {

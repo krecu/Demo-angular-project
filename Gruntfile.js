@@ -7,23 +7,17 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'themes/DemoApp/css/main.css': 'themes/DemoApp/scss/main.scss'
-                }
-            }
-        },
-
-        bower: {
-            install: {
-                options: {
-                    install: true,
-                    copy: false,
-                    targetDir: './bower_components',
-                    cleanTargetDir: true
+                    'dist/css/main.css': 'themes/DemoApp/scss/main.scss'
                 }
             }
         },
         jshint: {
-            all: [ 'Gruntfile.js', 'app/*.js', 'app/**/*.js' ]
+            all: {
+                src: ['app/*.js', 'app/**/*.js'],
+                options: {
+                    jshintrc: true
+                }
+            },
         },
         concat: {
             options: {
@@ -31,13 +25,13 @@ module.exports = function(grunt) {
             },
             dist: {
                 src: [ 'app/*.js', 'tmp/*.js' ],
-                dest: 'dist/app.js'
+                dest: 'dist/js/app.min.js'
             }
         },
         uglify: {
             dist: {
                 files: {
-                    'dist/app.js': [ 'dist/app.js' ]
+                    'dist/js/app.min.js': [ 'dist/js/app.min.js' ]
                 },
                 options: {
                     mangle: false
@@ -59,7 +53,7 @@ module.exports = function(grunt) {
             },
             min: {
                 files: [ 'Gruntfile.js', 'app/*.js', '*.html' ],
-                tasks: [ 'jshint', 'concat:dist', 'clean:temp', 'uglify:dist' ],
+                tasks: [ 'sass', 'jshint', 'concat:dist', 'clean:temp', 'uglify:dist' ],
                 options: {
                     atBegin: true
                 }
@@ -69,7 +63,7 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     hostname: 'localhost',
-                    port: 8080
+                    port: 9000
                 }
             }
         }
@@ -82,9 +76,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-bower-task');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
-    grunt.registerTask('dev', ['bower', 'connect:server', 'watch:dev' ]);
-    grunt.registerTask('minified', [ 'bower', 'sass', 'connect:server', 'watch:min' ]);
-    grunt.registerTask('package', [ 'bower', 'sass', 'jshint', 'concat:dist', 'uglify:dist', 'clean:temp', 'compress:dist' ]);
+    grunt.registerTask('default', [ 'sass', 'jshint', 'concat:dist', 'uglify:dist', 'clean:temp', 'connect:server', 'watch:min' ]);
 };
